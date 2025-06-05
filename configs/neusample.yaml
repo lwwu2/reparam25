@@ -1,0 +1,27 @@
+# dataset config
+brdf_ckpt: 'notebooks/weights/neusample/brdf/gold_coin.pth'
+batch_size: 1024
+spatial: 1
+angular: 1024
+spp: 1024
+length: 1024
+
+# training config
+learning_rate: 5e-4
+scheduler_rate: 0.5
+milestones: [10000]
+
+alpha: 1e-3
+
+# model config
+model:
+    C1: 16
+    D1: 2
+    C2: 16
+    D2: 1
+    L: 4
+    
+# for mis training
+model_ckpt: 'logs/gold_coin_rep/last.ckpt'
+learning_rate_mis: 1e-3
+log_loss: False
